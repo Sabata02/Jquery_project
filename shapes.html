@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shapes</title>
+  <link rel="stylesheet" href="css/style5.css">
+</head>
+
+<body>
+        <div id="nav">
+                <ul>
+                    <li ><a href="index.html">Home</a></li>
+                     <li><a href="size.html">Size and Proportion</a></li>
+                     <li><a href="numbers.html">Numbers</a></li>
+                     <li><a href="colours.html">colour</a></li>
+                     <li class="selected"><a href="shapes.html">Shapes</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+
+                </ul>
+            </div>
+<p>Circle</p>
+<button id="circle">Show</button>
+<button id="circle">Hide</button>
+<img src="images/circle_shape.png" id="circle"/>
+
+<p>Rectangle</p>
+<button id="rectangle">Show</button>
+<button id="rectangle">Hide</button>
+<img src="images/rectangle.png" id="rectangle"/>
+
+<p>Triangle</p>
+<button id="triangle">Show</button>
+<button id="triangle">Hide</button>
+<img src="images/triangle.png" id="triangle"/>
+
+<p>Square</p>
+<button id="square">Show</button>
+<button id="square">Hide</button>
+<img src="images/square.png" id="square"/>
+
+<p>Star</p>
+<button id="star">Show</button>
+<button id="star">Hide</button>
+<img src="images/Star.jpg" id="star"/>
+
+
+<p>Oval</p>
+<button id="oval">Show</button>
+<button id="oval">Hide</button>
+<img src="images/oval.png" id="oval"/>
+
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script>
+$(function(){
+    //circle
+    $( "#circle" ).click(function() {
+  $( "img#circle" ).first().show( "slow", function showNext() {
+    $( this ).next( "img#circle" ).show( "slow", showNext );
+  });
+});
+//hide circle
+$( "#circle" ).click(function() {
+  $( "img#circle" ).hide( 5000 );
+});
+
+// rectangle
+$( "#rectangle" ).click(function() {
+  $( "img#rectangle" ).first().show( "slow", function showNext() {
+    $( this ).next( "img#rectangle" ).show( "slow", showNext );
+  });
+});
+//hide rectangle
+$( "#rectangle" ).click(function() {
+  $( "img#rectangle" ).hide( 5000 );
+});
+
+// triangle
+$( "#triangle" ).click(function() {
+  $( "img#triangle" ).first().show( "slow", function showNext() {
+    $( this ).next( "img#triangle" ).show( "slow", showNext );
+  });
+});
+//hide triangle
+$( "#triangle" ).click(function() {
+  $( "img#triangle" ).hide( 5000 );
+});
+
+// square
+$( "#square" ).click(function() {
+  $( "img#square" ).first().show( "slow", function showNext() {
+    $( this ).next( "img#square" ).show( "slow", showNext );
+  });
+});
+//hide square
+$( "#square" ).click(function() {
+  $( "img#square" ).hide( 5000 );
+});
+
+// star
+$( "#star" ).click(function() {
+  $( "img#star" ).first().show( "slow", function showNext() {
+    $( this ).next( "img#star" ).show( "slow", showNext );
+  });
+});
+//hide star
+$( "#star" ).click(function() {
+  $( "img#star" ).hide( 5000 );
+});
+
+ //oval
+ $( "#oval" ).click(function() {
+  $( "img#oval" ).first().show( "slow", function showNext() {
+    $( this ).next( "img#oval" ).show( "slow", showNext );
+  });
+});
+//hide oval
+$( "#oval" ).click(function() {
+  $( "img#oval" ).hide( 5000 );
+});
+
+//menu
+$("#mainmenu a").each(function(){
+    var $option = $("<option></option>");
+    $option.val($(this).attr("href"));
+    $option.text($(this).text());
+    if($(this).parent().hasClass("selected")) {
+        $option.prop("selected", true);
+    };
+
+});
+
+});
+</script>
+
+</body>
+</html>

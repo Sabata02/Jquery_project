@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- JSExVar.html -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sizing and Proportions</title>
+  <link rel="stylesheet" href="css/style4.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="nav">
+                <ul>
+                    <li ><a href="index.html">Home</a></li>
+                     <li class="selected"><a href="size.html">Size and Proportion</a></li>
+                     <li><a href="numbers.html">Numbers</a></li>
+                     <li><a href="colours.html">colour</a></li>
+                     <li><a href="shapes.html">Shapes</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    <a class="bird" href="#bird">
+        <img src="images/bird.png"/>
+     </a>
+     <p id="caption"><strong>click on the picture to make it big</strong> </p>
+     <div class="bird-target" id="bird">
+        <img src="images/bird.png"/>
+        <a class="bird-close" href="#"></a>
+     </div>
+
+     <a class="pencil" href="#pencil">
+            <img src="images/pencil.png"/>
+         </a>
+         <p id="caption"><strong>click on the picture to see it tall</strong> </p>
+         <div class="pencil-target" id="pencil">
+            <img src="images/pencil.png"/>
+            <a class="pencil-close" href="#"></a>
+         </div>
+
+         <a class="road" href="#road">
+            <img src="images/road.jpg"/>
+         </a>
+         <p id="caption"><strong>click on the picture to make the road wider</strong> </p>
+         <div class="road-target" id="road">
+            <img src="images/road.jpg"/>
+            <a class="road-close" href="#"></a>
+         </div>
+
+         <a class="races" href="#races">
+            <img src="images/tortoise.gif"/>
+         </a>
+         <p id="caption"><strong>click the image to see who is fast or slow</strong> </p>
+         <div class="races-target" id="races">
+            <img src="images/fast-car.gif"/>
+            <a class="races-close" href="#"></a>
+         </div>
+
+      <script src="js/jquery-3.1.1.js"></script>
+      <script src="js/app.js"></script>
+      <script>
+
+var $select = $("<select></select>");
+
+$("#mainmenu").append($select);
+
+$select.change(function(){
+   window.location = $select.val();
+});
+
+$("#mainmenu a").each(function(){
+    var $option = $("<option></option>");
+    $option.val($(this).attr("href"));
+    $option.text($(this).text());
+    if($(this).parent().hasClass("selected")) {
+        $option.prop("selected", true);
+    };
+
+    $select.append($option);
+});
+
+
+      </script>
+</body>
+</html>
